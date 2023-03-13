@@ -1,3 +1,6 @@
+<?php
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,9 +8,26 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Home</title>
 </head>
 <body>
+    <header>
+        <img src="./img/logo.png">
+    </header>
 
+    <main>
+        <div id="about">
+            <h2>Onze missie</h2>
+            <p>Zorg voor motorisch beperkten toegankelijker maken.</p>
+        </div>
+        <div id="categories">
+            <img src="./img/card1.jpeg">
+            <img src="./img/card2.jpeg">
+            <img src="./img/card3.jpeg">
+            <img src="./img/card4.jpeg">
+            <img src="./img/card5.jpeg">
+        </div>
+    </main>
 </body>
 </html>
