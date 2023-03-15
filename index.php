@@ -29,5 +29,7 @@
             <img src="./img/card5.jpeg">
         </div>
     </main>
+
+    <a href="review.php">sign up page</a>
 </body>
 </html>
