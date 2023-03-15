@@ -14,7 +14,6 @@
 <body>
     <header>
         <img src="./img/logo.png">
-        <img src="./img/maan.png" id="light">
     </header>
 
     <main>
