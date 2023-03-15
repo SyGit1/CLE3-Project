@@ -21,6 +21,24 @@
             <h2>Onze missie</h2>
             <p>Zorg voor motorisch beperkten toegankelijker maken.</p>
         </div>
+
+        <section id="categories">
+            <div class="card">
+                <img src="./img/card1.jpeg">
+            </div>
+            <div class="card">
+                <img src="./img/card2.jpeg">
+            </div>
+            <div class="card">
+                <img src="./img/card3.jpeg">
+            </div>
+            <div class="card">
+                <img src="./img/card4.jpeg">
+            </div>
+            <div class="card">
+                <img src="./img/card5.jpeg">
+            </div>
+        </section>
     </main>
 
     <a href="review.php">sign up page</a>

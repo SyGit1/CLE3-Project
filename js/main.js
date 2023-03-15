@@ -8,4 +8,3 @@ function init(){
 function darkModeClickHandler(){
     darkMode.classList.toggle("darkMode");
 }
-}
