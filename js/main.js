@@ -1,12 +1,14 @@
 window.addEventListener('load', init);
 
-let darkMode;
+let dark;
 
 function init(){
-    darkMode = document.getElementById('light')
-    darkMode.addEventListener('click',darkModeClickHandler)
+    dark = document.getElementsByClassName('darkMode');
+    console.log(dark)
+    dark.addEventListener('click', darkModeClickHandler());
 }
 
 function darkModeClickHandler(){
-    darkMode.classList.toggle("darkMode");
+    dark.classList.toggle("darkMode");
+    console.log(`success~!`)
 };
