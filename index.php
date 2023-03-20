@@ -9,13 +9,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/style.css">
-    <script type="text/javascript" src="js/main.js" defer></script>
     <title>Home</title>
 </head>
 <body>
     <header>
-        <img src="./img/logo.png">
-        <div class="darkMode"><img src="./img/dark-mode.png"></div>
+        <img src="./img/logo.png" alt="avatar">
     </header>
 
     <main>
@@ -23,13 +21,24 @@
             <h2>Onze missie</h2>
             <p>Zorg voor motorisch beperkten toegankelijker maken.</p>
         </div>
-        <div id="categories">
-            <img src="./img/card1.jpeg">
-            <img src="./img/card2.jpeg">
-            <img src="./img/card3.jpeg">
-            <img src="./img/card4.jpeg">
-            <img src="./img/card5.jpeg">
-        </div>
+
+        <section id="categories">
+            <div class="card">
+                <img src="./img/card1.jpeg">
+            </div>
+            <div class="card">
+                <img src="./img/card2.jpeg">
+            </div>
+            <div class="card">
+                <img src="./img/card3.jpeg">
+            </div>
+            <div class="card">
+                <img src="./img/card4.jpeg">
+            </div>
+            <div class="card">
+                <img src="./img/card5.jpeg">
+            </div>
+        </section>
     </main>
 
     <a href="review.php">sign up page</a>
