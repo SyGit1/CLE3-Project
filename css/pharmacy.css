@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color: #ED254E;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 10px;
+    align-items: center;
+    height: 12vh;
+}
+
+header img {
+    width: 18vw;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+main {
+    margin: 30px;
+    height: 60vh;
+}
+
+footer {
+    margin: 30px;
+}
+
+footer .fa {
+    font-size: 4em;
+    text-decoration: none;
+    color: #C2CAD1;
+}
+
+footer .fa:hover {
+    transform: scale(1.1);
+}
