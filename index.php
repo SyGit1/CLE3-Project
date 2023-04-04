@@ -16,13 +16,14 @@
     <a href="index.php">
         <img src="./img/logo.png">
     </a>
-<!--    <a href="review.php">Sign Up</a>-->
+    <a href="Lotte/index.html">Informatie</a>
+    <!--    <a href="review.php">Sign Up</a>-->
 </header>
 
 <main>
     <div id="about">
         <h2>Onze missie</h2>
-        Zorg voor motorisch beperkten toegankelijker maken.
+        <p>Zorg voor motorisch beperkten toegankelijker maken.</p>
         <p>
             Door middel van deze applicatie wordt zorg in de buurt geinventariseerd en beoordeeld.
             Zo weet u waar u aan toe bent per zorginstelling en kunt u hier van tevoren rekening mee houden,
