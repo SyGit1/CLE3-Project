@@ -22,7 +22,7 @@
         <img src="./img/logo.png">
     </a>
     <div>
-        <a href="review.php">Sign Up</a>
+        <a href="sign-up.php">Sign Up</a>
         <button id="mybtn" onclick="darkmode()">Dark</button>
     </div>
 </header>
