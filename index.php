@@ -13,10 +13,10 @@
 
 <body>
 <header>
-    <a href="index.html">
+    <a href="index.php">
         <img src="./img/logo.png">
     </a>
-    <a href="review.php">Sign Up</a>
+<!--    <a href="review.php">Sign Up</a>-->
 </header>
 
 <main>
@@ -32,28 +32,28 @@
 
     <section id="categories">
         <div class="card">
-            <a href="hospital.html">
-                <img src="./img/card1.jpg" alt="avatar">
+            <a href="hospital.php">
+                <img src="./img/card1.jpeg" alt="avatar">
             </a>
         </div>
         <div class="card">
-            <a href="firstaid.html">
-                <img src="./img/card2.jpg" alt="avatar">
+            <a href="firstaid.php">
+                <img src="./img/card2.jpeg" alt="avatar">
             </a>
         </div>
         <div class="card">
-            <a href="dentist.html">
-                <img src="./img/card3.jpg" alt="avatar">
+            <a href="dentist.php">
+                <img src="./img/card3.jpeg" alt="avatar">
             </a>
         </div>
         <div class="card">
-            <a href="physio.html">
-                <img src="./img/card4.jpg" alt="avatar">
+            <a href="physio.php">
+                <img src="./img/card4.jpeg" alt="avatar">
             </a>
         </div>
         <div class="card">
-            <a href="pharmacy.html">
-                <img src="./img/card5.jpg" alt="avatar">
+            <a href="pharmacy.php">
+                <img src="./img/card5.jpeg" alt="avatar">
             </a>
         </div>
     </section>
