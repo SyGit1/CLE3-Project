@@ -7,6 +7,12 @@ body {
 button {
     cursor: pointer;
     padding: 10px 20px;
+    background-color: #ED254E;
+    border: 0;
+}
+
+.fa-solid {
+    font-size: 2em;
 }
 
 .dark-mode {
