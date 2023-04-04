@@ -12,15 +12,27 @@
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
     <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css"/>
     <link rel="stylesheet" type="text/css" href="css/maps.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Document</title>
 </head>
-<main>
-    <body id="geocode">
+
+<body id="geocode">
+<header>
+    <a href="index.php">
+        <img src="./img/logo.png">
+    </a>
+    <div>
+        <a href="review.php">Sign Up</a>
+        <button id="mybtn" onclick="darkmode()">Dark</button>
+    </div>
+</header>
+    <main>
     <div id="map"></div>
     <div id="panel"></div>
     <script type="text/javascript" src='demo.js'></script>
-    </body>
 </main>
+</body>
+
 
 </html>
 
