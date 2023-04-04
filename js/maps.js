@@ -16,8 +16,6 @@ function landmarkGeocode(platform) {
 /**
  * This function will be called once the Geocoder REST API provides a response
  * @param  {Object} result          A JSONP object representing the  location(s) found.
- *
- * see: http://developer.here.com/rest-apis/documentation/geocoder/topics/resource-type-response-geocode.html
  */
 function onSuccess(result) {
     const locations = result.items;
@@ -97,39 +95,24 @@ function openBubble(position, text){
  *                             H.service.GeocodingService
  */
 function addLocationsToPanel(locations){
+    const containerDiv = document.createElement('div');
+    let list;
+    content =  location.title  + '</br>';
 
-    const nodeOL = document.createElement('ul');
-    let i;
-
-    nodeOL.style.fontSize = 'small';
-    nodeOL.style.marginLeft ='5%';
-    nodeOL.style.marginRight ='5%';
-
-
-    for (i = 0;  i < locations.length; i += 1) {
-        let location = locations[i],
-            li = document.createElement('li'),
+    for (let location of locations) {
+        list = document.createElement('li'),
             divLabel = document.createElement('div'),
             content =  location.title  + '</br>';
         position = location.position;
-
-        content += '<strong>Huisnummer:</strong> ' + location.address.houseNumber + '<br/>';
-        content += '<strong>Straat:</strong> '  + location.address.label + '<br/>';
-        content += '<strong>Stad:</strong> ' + location.address.city + '<br/>';
-        content += '<strong>Postcode:</strong> ' + location.address.postalCode + '<br/>';
-        content += '<strong>Provincie:</strong> ' + location.address.county + '<br/>';
-        content += '<strong>Land:</strong> ' + location.address.countryName + '<br/>';
-        content += 'position: ' +
-            Math.abs(position.lat.toFixed(4)) + ((position.lat > 0) ? 'N' : 'S') +
-            ' ' + Math.abs(position.lng.toFixed(4)) + ((position.lng > 0) ? 'E' : 'W') + '<br/>';
-
-        divLabel.innerHTML = content;
-        li.appendChild(divLabel);
-
-        nodeOL.appendChild(li);
+        content += 'Huisnummer: ' + location.address.houseNumber + '<br/>';
+        content += 'Straat: '  + location.address.label + '<br/>';
+        content += 'Stad:' + location.address.city + '<br/>';
+        content += 'Postcode:' + location.address.postalCode + '<br/>';
     }
-
-    locationsContainer.appendChild(nodeOL);
+    divLabel.innerHTML = content;
+    list.appendChild(divLabel);
+    containerDiv.appendChild(list);
+    locationsContainer.appendChild(containerDiv);
 }
 
 
