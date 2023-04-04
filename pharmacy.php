@@ -10,7 +10,7 @@
 </head>
 <body>
 <header>
-    <a href="index.html">
+    <a href="index.php">
         <img src="./img/pharmacy.png">
     </a>
     <a href="review.php">Sign Up</a>
@@ -21,7 +21,7 @@
 </main>
 
 <footer>
-    <a href="index.html" class="fa fa-arrow-left"></a>
+    <a href="index.php" class="fa fa-arrow-left"></a>
 </footer>
 </body>
 </html>
