@@ -10,6 +10,8 @@
 </head>
 <body>
 <div id="favo"></div>
+<!--<div id="favo1"></div>-->
+<!--<div id="favo2"></div>-->
 
 </body>
 </html>
