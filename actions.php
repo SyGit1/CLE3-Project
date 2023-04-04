@@ -2,33 +2,38 @@
 /**
  * @return array
  */
-function getDishes()
+function Ziekenhuizen()
 {
     return [
         [
             "id" => 1,
-            "name" => "Pizza",
-            "kitchen" => "Italian",
+            "name" => "Erasmus MC",
+            "toegankelijkheid" => "zeer goed",
         ],
         [
             "id" => 2,
-            "name" => "Kale",
-            "kitchen" => "Dutch",
+            "name" => "Sint franciscus Ziekenhuis",
+            "toegankelijkheid" => "zeer goed",
         ],
         [
             "id" => 3,
-            "name" => "Lasagna",
-            "kitchen" => "Italian",
-        ],
+            "name" => "Ijsselland ziekenhuis",
+            "toegankelijkheid" => "zeer goed",
+        ]
         [
-            "id" => 4,
-            "name" => "Kebab",
-            "kitchen" => "Turkish",
-        ],
+        "id" => 4,
+        "name" => "Fysiotherapie Wijnhaven",
+        "toegankelijkheid" => " goed",
+         ],
         [
             "id" => 5,
-            "name" => "Paella",
-            "kitchen" => "Spanish",
+            "name" => "Sint franciscus Ziekenhuis",
+            "toegankelijkheid" => "zeer goed",
+        ],
+        [
+            "id" => 6,
+            "name" => "Ijsselland ziekenhuis",
+            "toegankelijkheid" => "zeer goed",
         ]
     ];
 }
