@@ -1,7 +1,50 @@
-.notClicked {
-    color: black;
+/*.notClicked {*/
+/*    background-color: black;*/
+/*}*/
+
+/*.clicked {*/
+/*    background-color: gold;*/
+/*}*/
+
+body {
+    margin: 0;
 }
 
-.clicked {
-    color: gold;
+header {
+    background-color: #ED254E;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    height: 10vh;
+}
+
+header img {
+    width: 50vw;
+}
+
+main {
+    margin: 30px;
+}
+
+#about {
+    background-color: #C2CAD1;
+    width: 60vw;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card img {
+    max-height: 30vh;
+}
+
+.card img:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.darkMode img{
+    height: 3vh;
+    width: 3vw;
 }

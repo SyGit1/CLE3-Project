@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,23 +6,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Home</title>
 </head>
 
+</html>
+
 <body>
-
-<script src="./js/darkMode.js"></script>
-
 <header>
     <a href="index.php">
         <img src="./img/logo.png">
     </a>
-    <div>
-        <a href="review.php">Sign Up</a>
-        <button id="mybtn" onclick="darkmode()">Dark</button>
-    </div>
+    <!--    <a href="review.php">Sign Up</a>-->
 </header>
 
 <main>
@@ -36,46 +32,31 @@
     </div>
 
     <section id="categories">
-        <a href="hospital.php">
-            <div class="card">
-                <img src="./img/card1.jpeg">
-                <div class="container">
-                <h2><b>Ziekenhuizen</b></h2>
-                </div>
-            </div>
-        </a>
-        <a href="firstaid.php">
-            <div class="card">
-                <img src="./img/card2.jpeg">
-                <div class="container">
-                    <h2><b>Huisartsen</b></h2>
-                </div>
-            </div>
-        </a>
-        <a href="dentist.php">
-            <div class="card">
-                <img src="./img/card3.jpeg">
-                <div class="container">
-                    <h2><b>Tandartsen</b></h2>
-                </div>
-            </div>
-        </a>
-        <a href="physio.php">
-            <div class="card">
-                <img src="./img/card4.jpeg">
-                <div class="container">
-                    <h2><b>Fysiotherapeuten</b></h2>
-                </div>
-            </div>
-        </a>
-        <a href="pharmacy.php">
-            <div class="card">
-                <img src="./img/card5.jpeg">
-                <div class="container">
-                    <h2><b>Apotheken</b></h2>
-                </div>
-            </div>
-        </a>
+        <div class="card">
+            <a href="hospital.php">
+                <img src="./img/card1.jpeg" alt="avatar">
+            </a>
+        </div>
+        <div class="card">
+            <a href="firstaid.php">
+                <img src="./img/card2.jpeg" alt="avatar">
+            </a>
+        </div>
+        <div class="card">
+            <a href="dentist.php">
+                <img src="./img/card3.jpeg" alt="avatar">
+            </a>
+        </div>
+        <div class="card">
+            <a href="physio.php">
+                <img src="./img/card4.jpeg" alt="avatar">
+            </a>
+        </div>
+        <div class="card">
+            <a href="pharmacy.php">
+                <img src="./img/card5.jpeg" alt="avatar">
+            </a>
+        </div>
     </section>
 </main>
 </body>
