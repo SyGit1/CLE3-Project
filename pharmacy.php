@@ -39,12 +39,4 @@
     <a href="index.php" class="fa fa-arrow-left"></a>
 </footer>
 </body>
-<main>
-    <div id="map"></div>
-    <div id="panel"></div>
-</main>
-<footer>
-    <a href="index.php" class="fa fa-arrow-left"></a>
-</footer>
-</body>
 </html>
