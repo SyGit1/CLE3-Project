@@ -20,7 +20,7 @@
         <img src="./img/physio.png">
     </a>
     <div>
-        <a href="review.php">Sign Up</a>
+        <a href="sign-up.php">Sign Up</a>
         <button id="mybtn" onclick="darkmode()">
             <i class="fa-solid fa-moon"></i>
         </button>
