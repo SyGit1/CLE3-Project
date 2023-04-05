@@ -30,7 +30,9 @@
     </div>
 </header>
 <main>
-    <a href="index.php" class="fa fa-arrow-left"></a>
+    <div id="back">
+        <a href="index.php" class="fa fa-arrow-left"></a>
+    </div>
     <div id="map"></div>
     <div id="panel"></div>
 </main>

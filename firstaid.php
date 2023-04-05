@@ -18,26 +18,23 @@
     <link rel="stylesheet" type="text/css" href="css/maps.css">
     <link rel="stylesheet" type="text/css" href="css/pharmacy.css">
 </head>
-
 <body id="geocode">
 <header>
     <a href="index.php">
         <img src="./img/firstaid.png">
     </a>
     <div>
-        <a href="sign-up.php">Sign Up</a>
         <button id="mybtn" onclick="darkmode()">
             <i class="fa-solid fa-moon"></i>
         </button>
     </div>
 </header>
 <main>
+    <div id="back">
+        <a href="index.php" class="fa fa-arrow-left"></a>
+    </div>
     <div id="map"></div>
     <div id="panel"></div>
 </main>
-<footer>
-    <a href="index.php" class="fa fa-arrow-left"></a>
-</footer>
 </body>
-
 </html>
