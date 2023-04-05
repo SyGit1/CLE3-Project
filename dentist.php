@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css"/>
         <link rel="stylesheet" type="text/css" href="css/maps.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/dentist.css">
     <title>Tandartsen in de buurt</title>
 </head>
 
@@ -27,19 +27,17 @@
         <img src="./img/dentist.png">
     </a>
     <div>
-        <a href="sign-up.php">Sign Up</a>
         <button id="mybtn" onclick="darkmode()">
             <i class="fa-solid fa-moon"></i>
         </button>
     </div>
 </header>
 <main>
+    <div id="back">
+        <a href="index.php" class="fa fa-arrow-left"></a>
+    </div>
     <div id="map"></div>
     <div id="panel"></div>
 </main>
-<footer>
-    <a href="index.php" class="fa fa-arrow-left"></a>
-</footer>
-</>
-
+</body>
 </html>

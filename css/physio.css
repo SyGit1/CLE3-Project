@@ -31,7 +31,7 @@ header {
 }
 
 header img {
-    width: 12vw;
+    width: 11vw;
 }
 
 header a {
@@ -45,19 +45,26 @@ header a:hover {
 
 main {
     margin: 30px;
-    height: 60vh;
 }
 
-footer {
+#back {
     margin: 30px;
 }
 
-footer .fa {
+#map {
+    margin: auto;
+}
+
+#panel {
+    margin: auto;
+}
+
+.fa {
     font-size: 4em;
     text-decoration: none;
     color: #C2CAD1;
 }
 
-footer .fa:hover {
+.fa:hover {
     transform: scale(1.1);
 }

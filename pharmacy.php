@@ -24,7 +24,6 @@
         <img src="./img/pharmacy.png">
     </a>
     <div>
-        <a href="sign-up.php">Sign Up</a>
         <button id="mybtn" onclick="darkmode()">
             <i class="fa-solid fa-moon"></i>
         </button>
@@ -40,11 +39,11 @@
 </footer>
 </body>
 <main>
+    <div id="back">
+        <a href="index.php" class="fa fa-arrow-left"></a>
+    </div>
     <div id="map"></div>
     <div id="panel"></div>
 </main>
-<footer>
-    <a href="index.php" class="fa fa-arrow-left"></a>
-</footer>
 </body>
 </html>
