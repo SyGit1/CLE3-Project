@@ -21,7 +21,7 @@
     </a>
     <div>
         <a href="Sybren/favourite-test.php">
-            <img class="fa-solid fa-moon" src="Sybren/resources/Black_Star.png" alt="">
+            <i class="fa-solid fa-star"></i>
         </a>
         <button id="mybtn" onclick="darkmode()">
             <i class="fa-solid fa-moon"></i>
