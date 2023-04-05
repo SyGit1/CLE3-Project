@@ -1,7 +1,7 @@
 function landmarkGeocode(platform) {
     const geocoder = platform.getSearchService(),
         landmarkGeocodingParameters = {
-            q: 'Erasmus MC',
+            q: 'Erasmus MC' ,
             at: '0,0',
             limit: 1
         };
@@ -126,8 +126,7 @@ function addLocationsToMap(locations){
     let i;
 
     // Add a marker for each location found
-    for (i = 0;  i < locations.length; i += 1) {
-        let location = locations[i];
+    for (let location of locations) {
         marker = new H.map.Marker(location.position);
         marker.label = location.title;
         group.addObject(marker);
