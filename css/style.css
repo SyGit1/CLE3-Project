@@ -87,3 +87,16 @@ main {
     text-decoration: none;
     color: #000;
 }
+
+p {
+    font-family: Arial;
+    margin: 2%;
+}
+
+h1 {
+    font-family: Arial;
+}
+
+h2 {
+    font-family: Arial;
+}
