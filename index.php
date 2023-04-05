@@ -20,7 +20,9 @@
         <img src="./img/logo.png">
     </a>
     <div>
-        <a href="review.php">Sign Up</a>
+        <a href="Sybren/favourite-test.php">
+            <img class="fa-solid fa-moon" src="Sybren/resources/Black_Star.png" alt="">
+        </a>
         <button id="mybtn" onclick="darkmode()">
             <i class="fa-solid fa-moon"></i>
         </button>

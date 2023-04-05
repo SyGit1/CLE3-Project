@@ -2,13 +2,13 @@ let favourite = document.createElement('img');
 let currentClass = localStorage.getItem('favouriteClass');
 
 window.addEventListener('DOMContentLoaded', () => {
-    favourite.src = 'img/Black_Star.png';
+    favourite.src = 'resources/Black_Star.png';
     favourite.classList.add('notClicked');
 
     if (currentClass) {
         favourite.classList.add(currentClass);
         if (currentClass === 'clicked') {
-            favourite.src = 'img/card1.jpeg';
+            favourite.src = 'resources/card1.jpeg';
         }
     }
 
@@ -22,13 +22,13 @@ favourite.addEventListener('click', () => {
         favourite.classList.remove('notClicked');
         favourite.classList.add('clicked');
         currentClass = 'clicked';
-        favourite.src = 'img/card1.jpeg';
+        favourite.src = 'resources/card1.jpeg';
 
     } else {
         favourite.classList.remove('clicked');
         favourite.classList.add('notClicked');
         currentClass = 'notClicked';
-        favourite.src = 'img/Black_Star.png';
+        favourite.src = 'resources/Black_Star.png';
     }
 
     localStorage.setItem('favouriteClass', currentClass);
