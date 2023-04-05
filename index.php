@@ -20,6 +20,7 @@
         <img src="./img/logo.png">
     </a>
     <div>
+        <a href="./Lotte/index.html"><i class="fa-solid fa-question"></i></a>
         <a href="Sybren/favourite-test.php">
             <i class="fa-solid fa-star"></i>
         </a>
@@ -32,7 +33,9 @@
 <main>
     <div id="about">
         <h2>Onze missie</h2>
-        Zorg voor motorisch beperkten toegankelijker maken.
+        <p>
+            Zorg voor motorisch beperkten toegankelijker maken.
+        </p>
         <p>
             Door middel van deze applicatie wordt zorg in de buurt geinventariseerd en beoordeeld.
             Zo weet u waar u aan toe bent per zorginstelling en kunt u hier van tevoren rekening mee houden,

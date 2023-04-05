@@ -24,19 +24,17 @@
         <img src="./img/pharmacy.png">
     </a>
     <div>
-        <a href="sign-up.php">Sign Up</a>
         <button id="mybtn" onclick="darkmode()">
             <i class="fa-solid fa-moon"></i>
         </button>
     </div>
 </header>
 <main>
+    <div id="back">
+        <a href="index.php" class="fa fa-arrow-left"></a>
+    </div>
     <div id="map"></div>
     <div id="panel"></div>
-    <script type="text/javascript" src='demo.js'></script>
 </main>
-<footer>
-    <a href="index.php" class="fa fa-arrow-left"></a>
-</footer>
 </body>
 </html>
