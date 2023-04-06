@@ -12,6 +12,9 @@
 <div id="favo"></div>
 <!--<div id="favo1"></div>-->
 <!--<div id="favo2"></div>-->
-
+<dialog class="modal" id="pokemon-detail">
+    <div class="modal-content"></div>
+    <button class="modal-close">❌</button>
+</dialog>
 </body>
 </html>

@@ -18,10 +18,6 @@ function getLocations()
     ];
 }
 
-/**
- * @param $id
- * @return mixed
- */
 function getLocationDetails($id)
 {
     $tags = [
@@ -29,22 +25,25 @@ function getLocationDetails($id)
             "distance" => "1.8km",
             "location" => ['Molenwaterplein 40', '3015 GD Rotterdam'],
             "phone" => '0107040704',
-            "website" => 'www.erasmusmc.nl'
+            "website" => 'www.erasmusmc.nl',
+            "description" => "This is the Erasmus MC location in Rotterdam"
         ],
         2 => [
-            "distance" => "1.8km",
+            "distance" => "5.87km",
             "location" => ['Molenwaterplein 40', '3015 GD Rotterdam'],
             "phone" => '0107040704',
-            "website" => 'www.erasmusmc.nl'
+            "website" => 'www.erasmusmc.nl',
+            "description" => "wooooooo"
         ],
     ];
 
     return $tags[$id];
 }
 
+$id = $_GET['id'] ?? 1; // get the id from the query string or default to 1
 $data = [
     'locations' => getLocations(),
-    'details' => getLocationDetails(1)
+    'details' => getLocationDetails($id)
 ];
 
 header('Content-Type: application/json');
