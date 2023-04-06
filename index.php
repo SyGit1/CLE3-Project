@@ -76,7 +76,7 @@
                 </div>
             </div>
         </a>
-        <a href="pharmacy.php">
+        <a href="Sybren/pharmacy.php">
             <div class="card">
                 <img src="./img/card5.jpeg">
                 <div class="container">
