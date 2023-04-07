@@ -32,7 +32,7 @@ function createDiv(locations) {
                 addFavourite.classList.add('favouriteNotClicked');
                 removeFromLocalStorage(location.id);
             } else {
-                addFavourite.src = 'resources/card1.jpeg';
+                addFavourite.src = 'resources/Gold_Star.png';
                 addFavourite.classList.remove('favouriteNotClicked');
                 addFavourite.classList.add('favouriteClicked');
                 addToLocalStorage(location.id);
@@ -41,7 +41,7 @@ function createDiv(locations) {
 
         let currentClass = getFromLocalStorage(location.id);
         if (currentClass) {
-            addFavourite.src = currentClass === 'favouriteClicked' ? 'resources/card1.jpeg' : 'resources/Black_Star.png';
+            addFavourite.src = currentClass === 'favouriteClicked' ? 'resources/Gold_Star.png' : 'resources/Black_Star.png';
             addFavourite.classList.add(currentClass);
         }
 
@@ -53,23 +53,34 @@ function createDiv(locations) {
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    const dialog = document.querySelector('#pokemon-detail');
+                    const dialog = document.getElementById('detailView');
                     const modalContent = dialog.querySelector('.modal-content');
 
                     // Create a table with the retrieved data
-                    let tableHtml = '<table>';
+                    const table = document.createElement('table');
                     for (const key in data.details) {
-                        tableHtml += `<tr><td>${key}</td><td>${data.details[key]}</td></tr>`;
+                        const row = table.insertRow();
+                        const cell1 = row.insertCell();
+                        const cell2 = row.insertCell();
+                        cell1.textContent = key;
+                        cell2.textContent = data.details[key];
                     }
-                    tableHtml += '</table>';
 
                     // Set the table as the modal content
-                    modalContent.innerHTML = tableHtml;
+                    modalContent.innerHTML = '';
+                    modalContent.appendChild(table);
                     dialog.showModal();
                 })
                 .catch(error => {
                     console.error(error);
                 });
+        });
+
+        const closeButton = document.querySelector('.modal-close');
+        const dialog = document.getElementById('detailView');
+
+        closeButton.addEventListener('click', () => {
+            dialog.close();
         });
 
 

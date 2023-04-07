@@ -28,7 +28,7 @@
 <main>
 
 </main>
-<dialog class="modal" id="pokemon-detail">
+<dialog class="modal" id="detailView">
     <div class="modal-content"></div>
     <button class="modal-close">❌</button>
 </dialog>
