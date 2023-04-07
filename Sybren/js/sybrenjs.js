@@ -13,7 +13,7 @@ function createDiv(locations) {
         const addFavourite = document.createElement('img');
         const details = document.createElement('button');
         div.innerHTML = `<h2>${location.name}</h2><p>${location.location}</p>`;
-        div.classList.add('locationData')
+        div.classList.add('locationData', 'loadDiv')
         addFavourite.src = 'resources/Black_Star.png'
         addFavourite.classList.add('favouriteNotClicked')
         addFavourite.setAttribute('data-id', location.id);

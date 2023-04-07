@@ -7,7 +7,7 @@ function getLocations()
     return [
         [
             "id" => 1,
-            "name" => "Erasmus MC",
+            "name" => "Tandartspraktijk de Bruijn",
             "location" => "Rotterdam",
         ],
         [
@@ -22,11 +22,11 @@ function getLocationDetails($id)
 {
     $tags = [
         1 => [
-            "distance" => "1.8km",
-            "location" => ['Molenwaterplein 40', '3015 GD Rotterdam'],
-            "phone" => '0107040704',
-            "website" => 'www.erasmusmc.nl',
-            "description" => "This is the Erasmus MC location in Rotterdam"
+            "distance" => "5km",
+            "location" => ['Westersingel 96', ' 3015 LC Rotterdam'],
+            "phone" => '0104360654',
+            "website" => 'www.tandartspraktijkdebruijn.nl',
+            "description" => "Voor al uw tandheelkunde!"
         ],
         2 => [
             "distance" => "5.87km",
