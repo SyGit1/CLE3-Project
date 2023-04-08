@@ -44,7 +44,7 @@
     </div>
 
     <section id="categories">
-        <a href="hospital.php">
+        <a href="Rayel/hospital.php">
             <div class="card">
                 <img src="./img/card1.jpeg">
                 <div class="container">

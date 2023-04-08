@@ -1,7 +1,7 @@
 function landmarkGeocode(platform) {
     const geocoder = platform.getSearchService(),
         landmarkGeocodingParameters = {
-            q: 'Erasmus MC' ,
+            q: 'Wijnhaven 99' ,
             at: '0,0',
             limit: 1
         };
@@ -43,7 +43,7 @@ function onError(error) {
 
 //Step 1: initialize communication with the platform
 // In your own code, replace variable window.apikey with your own apikey
-var platform = new H.service.Platform({
+let platform = new H.service.Platform({
     'apikey': '9iw8-Sw_KHN2NFYkF6Bwkg3-opWgHgr3oCfbv_m-l4Q'
 });
 const defaultLayers = platform.createDefaultLayers();

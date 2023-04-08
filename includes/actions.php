@@ -2,71 +2,69 @@
 /**
  * @return array
  */
-function Ziekenhuizen()
+function getLocations()
 {
     return [
         [
             "id" => 1,
-            "name" => "Erasmus MC",
-            "toegankelijkheid" => "zeer goed",
+            "name" => "Ijsselland Ziekenhuis",
+            "location" => "Rotterdam",
         ],
         [
             "id" => 2,
-            "name" => "Sint franciscus Ziekenhuis",
-            "toegankelijkheid" => "zeer goed",
+            "name" => "Ikazia Ziekenhuis",
+            "location" => "Rotterdam",
         ],
         [
             "id" => 3,
-            "name" => "Ijsselland ziekenhuis",
-            "toegankelijkheid" => "zeer goed",
-        ]
-        [
-        "id" => 4,
-        "name" => "Fysiotherapie Wijnhaven",
-        "toegankelijkheid" => " goed",
-         ],
-        [
-            "id" => 5,
-            "name" => "Sint franciscus Ziekenhuis",
-            "toegankelijkheid" => "zeer goed",
+            "name" => "Maasstad Ziekenhuis",
+            "location" => "Rotterdam",
         ],
         [
-            "id" => 6,
-            "name" => "Ijsselland ziekenhuis",
-            "toegankelijkheid" => "zeer goed",
-        ]
+            "id" => 4,
+            "name" => "Ijsselland Ziekenhuis",
+            "location" => "Capelle aan den Ijssel",
+        ],
     ];
 }
 
-/**
- * @param $id
- * @return mixed
- */
-function getDishDetails($id)
+function getLocationDetails($id)
 {
     $tags = [
         1 => [
-            "recipe" => "Put it in the oven and go!",
-            "tags" => ['cheese', 'oven']
+            "distance" => "1.0km",
+            "location" => ['Willemsplein 495, 3016 DR Rotterdam'],
+            "phone" => ' 0108930000',
+            "website" => 'www.franciscus.nl',
         ],
         2 => [
-            "recipe" => "You can make this delicious Dutch meal by ...",
-            "tags" => ['unox', 'healthy', 'stamppot', 'boerenkool']
+            "distance" => "4.2km",
+            "location" => ['Montessoriweg 1, 3083 AN Rotterdam'],
+            "phone" => ' 010 297 5000',
+            "website" => 'www.ikazia.nl',
         ],
         3 => [
-            "recipe" => "Very nice when your grandma prepares this meal",
-            "tags" => ['omnomnom']
+            "distance" => "6.1km",
+            "location" => ['Maasstadweg 21, 3079 DZ Rotterdam'],
+            "phone" => '0102911911',
+            "website" => 'https://www.maasstadziekenhuis.nl/',
         ],
         4 => [
-            "recipe" => "Everytime in the city after midnight",
-            "tags" => ['kapsalon', 'tasty', 'meat']
-        ],
-        5 => [
-            "recipe" => "Specialty when on holiday in Spain",
-            "tags" => ['fish']
+            "distance" => "6.8km",
+            "location" => ['Prins Constantijnweg 2, 2906 ZC Capelle aan den IJssel'],
+            "phone" => '0102585000',
+            "website" => 'http://www.ysl.nl/',
         ],
     ];
 
     return $tags[$id];
 }
 
+$id = $_GET['id'] ?? 1; // get the id from the query string or default to 1
+$data = [
+    'locations' => getLocations(),
+    'details' => getLocationDetails($id)
+];
+
+header('Content-Type: application/json');
+echo json_encode($data);
