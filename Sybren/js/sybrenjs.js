@@ -13,7 +13,7 @@ function createDiv(locations) {
         const addFavourite = document.createElement('img');
         const details = document.createElement('button');
         div.innerHTML = `<h2>${location.name}</h2><p>${location.location}</p>`;
-        div.classList.add('locationData')
+        div.classList.add('locationData', 'loadDiv')
         addFavourite.src = 'resources/Black_Star.png'
         addFavourite.classList.add('favouriteNotClicked')
         addFavourite.setAttribute('data-id', location.id);
@@ -32,7 +32,7 @@ function createDiv(locations) {
                 addFavourite.classList.add('favouriteNotClicked');
                 removeFromLocalStorage(location.id);
             } else {
-                addFavourite.src = 'resources/card1.jpeg';
+                addFavourite.src = 'resources/Gold_Star.png';
                 addFavourite.classList.remove('favouriteNotClicked');
                 addFavourite.classList.add('favouriteClicked');
                 addToLocalStorage(location.id);
@@ -41,35 +41,50 @@ function createDiv(locations) {
 
         let currentClass = getFromLocalStorage(location.id);
         if (currentClass) {
-            addFavourite.src = currentClass === 'favouriteClicked' ? 'resources/card1.jpeg' : 'resources/Black_Star.png';
+            // Ternaire operator, als de opgeslagen waarde in de localstorage 'favouriteClicked' is wordt de img src 'resources/Gold_Star.png', is dit niet
+            // het geval wordt de img src 'resources/Black_Star.png'
+            addFavourite.src = currentClass === 'favouriteClicked' ? 'resources/Gold_Star.png' : 'resources/Black_Star.png';
             addFavourite.classList.add(currentClass);
         }
 
 
-        // Show location details in dialog
+        // eventListener voor de details button, nadat deze geklikt is worden de JSON objecten uit action.php opgehaald waar het id overeenkomt met de data-id
+        // van de button. Hierna wordt de DOM benut om een tabel aan te maken waarin de opgehaalde informatie wordt getoond
         details.addEventListener('click', () => {
             const id = details.getAttribute('data-id');
             const url = `includes/action.php?id=${id}`;
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    const dialog = document.querySelector('#pokemon-detail');
+                    const dialog = document.getElementById('detailView');
                     const modalContent = dialog.querySelector('.modal-content');
 
                     // Create a table with the retrieved data
-                    let tableHtml = '<table>';
+                    const table = document.createElement('table');
                     for (const key in data.details) {
-                        tableHtml += `<tr><td>${key}</td><td>${data.details[key]}</td></tr>`;
+                        const row = table.insertRow();
+                        const cell1 = row.insertCell();
+                        const cell2 = row.insertCell();
+                        cell1.textContent = key;
+                        cell2.textContent = data.details[key];
                     }
-                    tableHtml += '</table>';
 
-                    // Set the table as the modal content
-                    modalContent.innerHTML = tableHtml;
+                    // Tabel toevoegen aan de modalContent
+                    modalContent.innerHTML = '';
+                    modalContent.appendChild(table);
                     dialog.showModal();
                 })
                 .catch(error => {
                     console.error(error);
                 });
+        });
+
+        // querySelector, want getElementsByClassName werkte niet, dit heb ik op meerdere plekken
+        const closeButton = document.querySelector('.modal-close');
+        const dialog = document.getElementById('detailView');
+
+        closeButton.addEventListener('click', () => {
+            dialog.close();
         });
 
 

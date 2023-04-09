@@ -20,10 +20,10 @@
         <img src="./img/logo.png">
     </a>
     <div>
-        <a href="Lotte/info.html"><i class="fa-solid fa-question"></i></a>
-        <a href="Sybren/favourite-test.php">
-            <i class="fa-solid fa-star"></i>
-        </a>
+        <a href="./Lotte/index.html"><i class="fa-solid fa-question"></i></a>
+<!--        <a href="Sybren/favourite-test.php">-->
+<!--            <i class="fa-solid fa-star"></i>-->
+<!--        </a>-->
         <button id="mybtn" onclick="darkmode()">
             <i class="fa-solid fa-moon"></i>
         </button>
@@ -44,7 +44,7 @@
     </div>
 
     <section id="categories">
-        <a href="hospital.php">
+        <a href="Rayel/hospital.php">
             <div class="card">
                 <img src="./img/card1.jpeg">
                 <div class="container">
