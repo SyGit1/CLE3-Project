@@ -21,9 +21,9 @@
     </a>
     <div>
         <a href="./Lotte/index.html"><i class="fa-solid fa-question"></i></a>
-        <a href="Sybren/favourite-test.php">
-            <i class="fa-solid fa-star"></i>
-        </a>
+<!--        <a href="Sybren/favourite-test.php">-->
+<!--            <i class="fa-solid fa-star"></i>-->
+<!--        </a>-->
         <button id="mybtn" onclick="darkmode()">
             <i class="fa-solid fa-moon"></i>
         </button>

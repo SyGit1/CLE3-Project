@@ -41,12 +41,15 @@ function createDiv(locations) {
 
         let currentClass = getFromLocalStorage(location.id);
         if (currentClass) {
+            // Ternaire operator, als de opgeslagen waarde in de localstorage 'favouriteClicked' is wordt de img src 'resources/Gold_Star.png', is dit niet
+            // het geval wordt de img src 'resources/Black_Star.png'
             addFavourite.src = currentClass === 'favouriteClicked' ? 'resources/Gold_Star.png' : 'resources/Black_Star.png';
             addFavourite.classList.add(currentClass);
         }
 
 
-        // Show location details in dialog
+        // eventListener voor de details button, nadat deze geklikt is worden de JSON objecten uit action.php opgehaald waar het id overeenkomt met de data-id
+        // van de button. Hierna wordt de DOM benut om een tabel aan te maken waarin de opgehaalde informatie wordt getoond
         details.addEventListener('click', () => {
             const id = details.getAttribute('data-id');
             const url = `includes/action.php?id=${id}`;
@@ -66,7 +69,7 @@ function createDiv(locations) {
                         cell2.textContent = data.details[key];
                     }
 
-                    // Set the table as the modal content
+                    // Tabel toevoegen aan de modalContent
                     modalContent.innerHTML = '';
                     modalContent.appendChild(table);
                     dialog.showModal();
@@ -76,6 +79,7 @@ function createDiv(locations) {
                 });
         });
 
+        // querySelector, want getElementsByClassName werkte niet, dit heb ik op meerdere plekken
         const closeButton = document.querySelector('.modal-close');
         const dialog = document.getElementById('detailView');
 
