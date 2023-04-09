@@ -1,6 +1,6 @@
 window.addEventListener('load', init);
 
-let apiUrl = "api.php";
+let apiUrl = "./getInfo.php";
 let disabledData = {};
 let gallery;
 let detailDialog;
@@ -26,6 +26,7 @@ function ajaxRequest(url, successHandler)
                 throw new Error(response.statusText);
             }
             return response.json();
+            console.log(response.statusText);
         })
         .then(successHandler)
         .catch(ajaxErrorHandler);
@@ -67,11 +68,11 @@ function fillDisabilityCard(disability)
 }
 
 function ajaxErrorHandler(data){
+    console.log(data);
     let error = document.createElement('div');
     error.classList.add('error');
     error.innerHTML = 'Er is helaas iets fout gegaan met de API, probeer het later opnieuw';
     gallery.before(error);
-    console.log(data)
 }
 
 function infoClickHandler(e)
@@ -107,7 +108,7 @@ function infoClickHandler(e)
 function detailModalClickHandler(e)
 {
     if (e.target.nodeName === 'DIALOG' || e.target.nodeName === 'BUTTON') {
-        detailDialog.closed();
+        detailDialog.close();
     }
 }
 

@@ -7,18 +7,18 @@ function getDishes()
     return [
         [
             "id" => 1,
-            "name" => "Reuma",
-            "kitchen" => "Italian",
+            "name" => "Dwarslaesie",
+            "type" => "Disability",
         ],
         [
             "id" => 2,
-            "name" => "Kale",
-            "kitchen" => "Dutch",
+            "name" => "Reuma",
+            "type" => "Disability",
         ],
         [
             "id" => 3,
-            "name" => "Lasagna",
-            "kitchen" => "Italian",
+            "name" => "Spasticiteit",
+            "type" => "Disability",
         ]
     ];
 }
@@ -31,19 +31,19 @@ function getDishDetails($id)
 {
     $tags = [
         1 => [
+            "name" => "Dwarslaesie",
             "recipe" => "Put it in the oven and go!",
-            "tags" => ['cheese', 'oven'],
-            "img" => "img/dwarslaesie.webp"
+            "img" => "CLSlay/Lotte/img/dwarslaesie.webp",
         ],
         2 => [
+            "name" => "Reuma",
             "recipe" => "You can make this delicious Dutch meal by ...",
-            "tags" => ['unox', 'healthy', 'stamppot', 'boerenkool'],
-            "img" => "img/reuma.png"
+            "img" => "CLSlay/Lotte/img/reuma.png",
         ],
         3 => [
+            "name" => "Spasticiteit",
             "recipe" => "Very nice when your grandma prepares this meal",
-            "tags" => ['omnomnom'],
-            "img" => "img/spasticiteit.jpg"
+            "img" => "CLSlay/Lotte/img/spasticiteit.jpg",
         ]
     ];
 

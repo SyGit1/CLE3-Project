@@ -20,7 +20,7 @@
         <img src="./img/logo.png">
     </a>
     <div>
-        <a href="./Lotte/index.html"><i class="fa-solid fa-question"></i></a>
+        <a href="Lotte/info.html"><i class="fa-solid fa-question"></i></a>
         <a href="Sybren/favourite-test.php">
             <i class="fa-solid fa-star"></i>
         </a>

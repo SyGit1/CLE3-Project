@@ -6,8 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script type="text/javascript" src="lotte.js" defer></script>
+    <script type="text/javascript" src="js/info.js"></script>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/lotte.css">
 </head>
 <body>
 <header>
@@ -16,16 +17,28 @@
     </a>
 </header>
 
-<main>
+<section id="main">
+    <div class="card" id="info-card"></div>
+</section>
     <h1>Informatie</h1>
 
     <section id="info-gallery"></section>
 
     <dialog class="modal" id="disability-detail">
         <div class="modal-content"></div>
+        <form id="favoriteForm">
+            <input type="submit" value="add-to-favorites"/>
+        </form>
         <button class="modal-close">❌</button>
     </dialog>
-</main>
+
+<section id="favorite">
+    <div id="favoriteList">
+        <h1><i class="fas fa-clipboard-list"></i> Favorite List</h1>
+        <ul id="list"></ul>
+    </div>
+</section>
+
 
 <footer>
 
