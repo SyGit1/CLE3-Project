@@ -5,3 +5,17 @@ section {
 h1 {
     margin: 3%;
 }
+
+.disabledimg {
+    width: 100px;
+    height: 100px;
+}
+
+.imgdetail {
+    width: 200px;
+    height: 200px;
+}
+
+url {
+    font-family: Arial;
+}

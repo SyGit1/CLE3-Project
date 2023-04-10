@@ -20,16 +20,12 @@ function init() {
     favoriteForm = document.querySelector('#favoriteForm');
     list = document.querySelector('#list');
 
-    //Add event listeners for form & removal
-    favoriteForm.addEventListener('submit', formSubmitHandler);
-    list.addEventListener('click', todoItemClickHandler);
-
     //Retrieve current items from local storage & add them to the list
-    let favoriteItemsString = localStorage.getItem('favoriteItems');
+    let favoriteItemsString = localStorage.getItem('favorites');
     if (favoriteItemsString !== null && favoriteItemsString !== undefined) { //Or: if (todoItemsString !== null) {
         favoriteItems = JSON.parse(favoriteItemsString);
-        for (let favoriteItem of favoriteItems) {
-            addTodoItem(favoriteItem);
+        for (let favoriteItem in favoriteItems) {
+            addTodoItem(favoriteItem, `todo${favoriteItem}`);
         }
     }
     //dialog element
@@ -63,24 +59,18 @@ function ajaxRequest(url, successHandler) {
 }
 
 /**
- * Create initial Pokémon cards based on initial API data
+ * Create initial info cards based on initial API data
  *
  * @param data
  */
 function createInfoCards(data) {
-    //Loop through the list of Pokémon
     for (let getDishes of data) {
-        //Wrapper element for every Pokémon card. We need the wrapper now, because adding it later
-        //will result in Pokémon being ordered based on the load times of the API instead of chronically
         let infoCard = document.createElement('div');
         infoCard.classList.add('create-info-card');
         infoCard.dataset.name = getDishes.name;
-
-        //Append Pokémon card to the actual HTML
         gallery.appendChild(infoCard);
 
         //Retrieve the detail information from the API
-        //ajaxRequest(getDishes.url, fillInfoCard);
         fillInfoCard(getDishes);
     }
 }
@@ -91,26 +81,26 @@ function createInfoCards(data) {
  * @param getDishes
  */
 function fillInfoCard(getDishes) {
-    //Wrapper element for every Pokémon card
     let infoCard = document.querySelector(`.create-info-card[data-name='${getDishes.name}']`);
 
-    //Element for the name of the Pokémon
+    //Element for the name
     let title = document.createElement('h2');
     title.innerHTML = `${getDishes.name}`;
     infoCard.appendChild(title);
 
-    //Element for the image of the Pokémon
+    //Element for the image
     let image = document.createElement('img');
     image.src = getDishes.img;
+    image.classList.add('disabledimg')
     infoCard.appendChild(image);
 
-    //Element for the button to load the shiny version of the Pokémon
+    //Element for the button to show more info
     let button = document.createElement('button');
-    button.innerHTML = 'Show disability';
+    button.innerHTML = 'Show information';
     button.dataset.id = getDishes.id;
     infoCard.appendChild(button);
 
-    //Store Pokémon data globally for later use in other functions
+    //Store data globally for later use in other functions
     infoData[getDishes.id] = getDishes;
 }
 
@@ -128,7 +118,7 @@ function ajaxErrorHandler(data) {
 }
 
 /**
- * Open the detailview with information of our sport
+ * Open the detailview with info
  *
  * @param e
  */
@@ -152,13 +142,48 @@ function fillDetailCard(data) {
     title.innerHTML = `${data.name}`;
     detailContent.appendChild(title);
 
-    let img = document.createElement('img');
-    img.innerHTML = `${data.img}`;
-    detailContent.appendChild(img);
+    let image = document.createElement('img');
+    image.src = `${data.img}`;
+    image.classList.add('imgdetail')
+    detailContent.appendChild(image);
 
-    let tekst = document.createElement('p');
-    tekst.innerHTML = `${data.recipe}`;
-    detailContent.appendChild(tekst);
+    let info = document.createElement('p');
+    info.innerHTML = `${data.info}`;
+    detailContent.appendChild(info);
+
+    let link = document.createElement('a');
+    link.href = data.link;
+    link.textContent = data.link;
+    detailContent.appendChild(link);
+
+    let button = document.createElement('button');
+    detailContent.appendChild(button);
+    console.log(data.id)
+
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || {};
+    if (favorites[data.name] === 'favoriteClicked') {
+        button.classList.add('favoriteClicked');
+        button.innerHTML = 'Remove from favorites list';
+    }
+    else{
+        button.classList.add('favoriteNotClicked');
+        button.innerHTML = 'Add to favorites list';
+    }
+
+    button.addEventListener('click', () => {
+        let clicked = button.classList.contains('favoriteClicked');
+        if (clicked) {
+            button.classList.remove('favoriteClicked');
+            button.classList.add('favoriteNotClicked');
+            removeFromLocalStorage(data.name);
+            removeTodoItem(`todo${data.name}`);
+        } else {
+            button.classList.remove('favoriteNotClicked');
+            button.classList.add('favoriteClicked');
+            addToLocalStorage(data.name);
+            addTodoItem(data.name, `todo${data.name}`);
+        }
+    });
 
     //Open the modal
     detailDialog.showModal();
@@ -186,53 +211,32 @@ function detailModalCloseHandler(e) {
 }
 
 /**
- * Handle the new input from the form
- *
- * @param e
- */
-function formSubmitHandler(e) {
-    e.preventDefault();
-    console.log("add to favorite");
-    //Check if the field is not empty
-    let name = dataForModal.name;
-    console.log(dataForModal.name)
-
-    //Add to the HTML list & local storage
-    addTodoItem(name);
-    todoItems.push(name);
-    localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
-}
-
-/**
  * Add a new item to the HTML
  *
  * @param todoText
  */
-function addTodoItem(todoText) {
+function addTodoItem(todoText, id) {
     let listItem = document.createElement('li');
     listItem.innerText = todoText;
+    listItem.id = id;
     list.appendChild(listItem);
-    console.log(favoriteItems);
 }
 
-/**
- * Remove the clicked list item
- *
- * @param e
- */
-function todoItemClickHandler(e) {
-    let favoriteTarget = e.target;
+function removeTodoItem(id) {
+    let listItem = document.getElementById(id);
+    listItem.remove()
+}
 
-    //Only continue if we clicked on a list item
-    if (favoriteTarget.nodeName !== 'LI') {
-        return;
-    }
+function addToLocalStorage(id) {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || {};
+    favorites[id] = 'favoriteClicked';
+    console.log(favorites)
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+}
 
-    //Remove from local storage
-    let itemIndex = favoriteItems.indexOf(favoriteTarget.innerText);
-    todoItems.splice(itemIndex, 1);
-    localStorage.setItem('todoItems', JSON.stringify(todoItems));
-
-    //Remove from HTML
-    favoriteTarget.remove();
+function removeFromLocalStorage(id) {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || {};
+    delete favorites[id];
+    console.log(favorites)
+    localStorage.setItem('favorites', JSON.stringify(favorites));
 }
